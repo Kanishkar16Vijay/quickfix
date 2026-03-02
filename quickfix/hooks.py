@@ -1,7 +1,9 @@
 app_name = "quickfix"
 app_title = "Quickfix"
 app_publisher = "Kanishkar"
-app_description = "small electronics repair shop with 10 technicians repairing smartphones, laptops, and tablets"
+app_description = (
+	"small electronics repair shop with 10 technicians repairing smartphones, laptops, and tablets"
+)
 app_email = "kanishkar@aerele.in"
 app_license = "mit"
 
@@ -249,4 +251,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
