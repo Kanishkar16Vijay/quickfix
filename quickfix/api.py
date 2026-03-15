@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 from frappe.utils import add_to_date, now
 
 
@@ -39,3 +40,13 @@ def transfer_job(from_tech, to_tech):
 	except Exception:
 		frappe.db.rollback()
 		frappe.log_error("Tranfer Job Failed", frappe.get_traceback(with_context=True))
+
+
+@frappe.whitelist()
+def share_job_card(job_card_name: str, user_email: str) -> None:
+	if frappe.db.exists("Job Card", job_card_name):
+		frappe.throw(_("Job Card not found"))
+
+	frappe.share.add("Job Card", job_card_name, user_email, read=1, write=0, share=0, notify=1)
+
+	frappe.msgprint(_(f"Job Card {job_card_name} shared with {user_email}"))

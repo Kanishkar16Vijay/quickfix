@@ -122,13 +122,14 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Technician": "quickfix.permission.permission_for_techs",
+	"Job Card": "quickfix.permission.permission_for_assign_jc",
+}
 #
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+has_permission = {
+	"Service Invoice": "quickfix.permission.service_invoice_permission_for_paid",
+}
 
 # Document Events
 # ---------------
@@ -251,3 +252,7 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+
+fixtures = [
+	{"doctype": "Role", "filters": {"name": ["in", ["QF Manager", "QF Service Staff", "QF Technician"]]}},
+]
