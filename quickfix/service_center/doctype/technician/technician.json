@@ -95,7 +95,7 @@
  "image_field": "photo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-25 22:48:11.458702",
+ "modified": "2026-03-15 20:16:11.887347",
  "modified_by": "Administrator",
  "module": "Service Center",
  "name": "Technician",
@@ -112,6 +112,21 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "QF Service Staff"
+  },
+  {
+   "read": 1,
+   "role": "QF Technician"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "QF Manager",
    "write": 1
   }
  ],
